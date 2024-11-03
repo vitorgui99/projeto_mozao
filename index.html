@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aceita?</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <header>
+        <h1>Quer casar comigo de novo?</h1>
+    </header>
+    <section>
+        <div>
+            <h2>Escolha uma opção:</h2>
+            <label>
+                <input id="sim-box" type="checkbox">
+                Sim
+            </label>
+            <label>
+                <input id="nao-box" type="checkbox">
+                Não
+            </label>
+            <button type="button" onclick="confirmarEscolha()">Enviar</button>
+        </div>
+    </section>
+    <script>
+        const simBox = document.getElementById('sim-box')
+        const naoBox = document.getElementById('nao-box')
+        simBox.addEventListener('change',() => {
+            if (simBox.checked) {
+                naoBox.checked = false;
+            }
+        })
+        naoBox.addEventListener('change',() => {
+            if (naoBox.checked) {
+                simBox.checked = false;
+            }
+        })
+        function confirmarEscolha() {
+            if (simBox.checked) {
+                alert ('Ebaa, posso marcar a Data para hoje???')
+            }else if (naoBox.checked) {
+                alert ('Ops, essa opção pra você, não está mais disponível!!!');
+            }else {
+                alert ('Por favor, escolha uma opção.')
+            }
+        }
+    </script>
+</body>
+</html>
